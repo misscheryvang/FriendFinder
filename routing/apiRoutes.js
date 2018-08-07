@@ -19,11 +19,11 @@ module.exports = function (app) {
 
     var currentUser = friendData[friendData.length - 1];
     var matchedFriend = currentUser;
+    var matchedNum = 50;
 
     for (var k = 0; k < friendData.length - 1; k++) {
       
       var diffScore = 0;
-      var matchedNum = 50;
 
       for (var i = 0; i < friendData[k].scores.length; i++) {
         diffScore += Math.abs(parseInt(friendData[k].scores[i]) - parseInt(currentUser.scores[i]));

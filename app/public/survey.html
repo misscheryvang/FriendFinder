@@ -162,7 +162,7 @@
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
             <i class="fa fa-check-circle" aria-hidden="true"></i>
             Submit</button>
-            
+
         <hr>
         <footer class="footer">
             <div class="container">
@@ -174,11 +174,36 @@
         </footer>
     </div>
 
+    <!-- Modal -->
+    <div id="results" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h2 class="modal-title">
+                        <strong>Best Match</strong>
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="matchName"></h2>
+                    <img id="matchPhoto" src="https://vetstreet.brightspotcdn.com/dims4/default/f6e3702/2147483647/thumbnail/180x180/quality/90/
+                    ?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F17%2Fa85b40b3a511e092fe0050568d634f%2Ffile%2Fhub-cats-kitten.jpg"
+                        alt="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </body>
 
 <script type="text/javascript">
 
-    // Capture theinputs
+    // Capture the inputs
     $("#submit").on("click", function (event) {
         event.preventDefault();
 
@@ -203,8 +228,12 @@
         // AJAX post the data to the friends API.
         $.post("/api/friends", inputData, function (data) {
 
-            // Display result to user
-            alert("Your new best friend is:\n" + "Name: " + data.name + "\nPhoto: " + data.photo);
+            // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+            $("#matchName").text(data.name);
+            $("#matchPhoto").attr("src", data.photo);
+
+            // Show the modal with the best match
+            $("#results").modal("toggle");
         });
     });
 </script>
