@@ -1,0 +1,27 @@
+{
+  "name": "FriendFinder",
+  "version": "1.0.0",
+  "description": "This project will compare results from the user's survey and display the best overall match of another user from a data array.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "init": "^0.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misscheryvang/FriendFinder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misscheryvang/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/misscheryvang/FriendFinder#readme"
+}
