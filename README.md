@@ -7,9 +7,9 @@ Its useful for sites similar to online dating or sites seraching for indiviuals 
 This project is dependent on node packages from express and body-parser.
 
 # To deploy
-clone the files
-Enter "node server.js" in command line/terminal
+clone the files,
+Enter "node server.js" in command line/terminal,
 Localhost:8080 in web browser
 
-
+![Psychic Game](https://github.com/misscheryvang/FriendFinder/blob/master/app/public/assets/screenshot/screen.png)
 
